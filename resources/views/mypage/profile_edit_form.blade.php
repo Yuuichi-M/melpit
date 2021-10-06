@@ -24,7 +24,7 @@
             <form method="POST" action="{{ route('mypage.edit-profile') }}" class="p-5" enctype="multipart/form-data">
                 @csrf
 
-                {{-- アバター画像 --}}
+                <!-- アバター画像 -->
                 <span class="avatar-form image-picker">
                     <input type="file" name="avatar" class="d-none" accept="image/png,image/jpeg,image/gif" id="avatar" />
                     <label for="avatar" class="d-inline-block">
@@ -32,7 +32,7 @@
                     </label>
                 </span>
 
-                {{-- ニックネーム --}}
+                <!-- ニックネーム -->
                 <div class="form-group mt-3">
                     <label for="name">ニックネーム</label>
                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name', $user->name) }}" required autocomplete="name" autofocus>
