@@ -37343,25 +37343,18 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //画像を選択するinputタグのDOMを取得
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-
-document.querySelector('.image-picker input') //画像が選択された時に実行される関数（リスナー）を追加
-.addEventListener('change', function (e) {
-  // ここに画像が選択された時の処理を記述する
+document.querySelector('.image-picker input').addEventListener('change', function (e) {
   var input = e.target;
-  var reader = new FileReader(); //FileReaderクラスのインスタンスを作成
+  var reader = new FileReader();
 
   reader.onload = function (e) {
-    //onloadフィールドに関数を代入
-    // ここに、画像を読み込んだ後の処理を記述する
-    //imgタグのsrc属性を更新するために、imgタグのDOMを取得
     input.closest('.image-picker').querySelector('img').src = e.target.result;
-  }; //readAsDataURLメソッドで画像の読み込みを開始
-
+  };
 
   reader.readAsDataURL(input.files[0]);
-}); //DOMとはHTML文書をプログラムから操作できるオブジェクト
+});
 
 /***/ }),
 
